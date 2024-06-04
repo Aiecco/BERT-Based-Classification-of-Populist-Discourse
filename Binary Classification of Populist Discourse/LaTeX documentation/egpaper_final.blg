@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: egpaper_final.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+Database file #1: egbib.bib
+You've used 6 entries,
+            1791 wiz_defined-function locations,
+            477 strings with 5161 characters,
+and the built_in function-call counts, 1692 in all, are:
+= -- 101
+> -- 180
+< -- 1
++ -- 62
+- -- 56
+* -- 130
+:= -- 314
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 54
+empty$ -- 113
+format.name$ -- 56
+if$ -- 347
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 5
+newline$ -- 35
+num.names$ -- 6
+pop$ -- 28
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 29
+stack$ -- 0
+substring$ -- 32
+swap$ -- 15
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 9
+width$ -- 7
+write$ -- 67

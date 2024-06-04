@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{abts2016populism}
+Koen Abts and Stefan Rummens.
+\newblock Populism.
+\newblock {\em The Oxford handbook of political ideologies}, pages 405--417,
+  2016.
+
+\bibitem{mudde2017populism}
+Cas Mudde and Crist{\'o}bal~Rovira Kaltwasser.
+\newblock {\em Populism: A very short introduction}.
+\newblock Oxford University Press, 2017.
+
+\bibitem{hoffmann2022training}
+Jordan Hoffmann, Sebastian Borgeaud, Arthur Mensch, Elena Buchatskaya, Trevor
+  Cai, Eliza Rutherford, Dan Casas, Lisa Hendricks, Johannes Welbl, Aidan
+  Clark, et~al.
+\newblock Training compute-optimal large language models.
+\newblock {\em arXiv preprint arXiv:2203.15556}, 2022.
+
+\bibitem{devlin2018bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock \url{https://github.com/google-research/bert}, 2018.
+\newblock accessed: 2024-06-02.
+
+\bibitem{radford2019language}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever.
+\newblock Language models are unsupervised multitask learners.
+\newblock \url{https://github.com/openai/gpt-2}, 2019.
+\newblock accessed: 2024-06-02.
+
+\bibitem{brown2020language}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan,
+  Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda
+  Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan,
+  Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter,
+  Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray,
+  Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford,
+  Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners.
+\newblock {\em arXiv preprint arXiv:1907.11692}, 2020.
+
+\end{thebibliography}
