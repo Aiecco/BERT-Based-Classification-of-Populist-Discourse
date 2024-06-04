@@ -1,16 +1,16 @@
-Binary Classification of Populist Speech
-Overview
+# Binary Classification of Populist Speech
+## Overview
 
 This repository contains the code and data for the paper "Binary Classification of Populist Speech". The study addresses the classification of speeches as populist or non-populist using fine-tuned pre-trained language models. The models evaluated include BERT-tiny, BERT-large, GPT-2, and RoBERTa-large.
 Authors
 
-    Alessandro Pala - Email
-    Lorenzo Cino - Email
-    Greta Grelli - Email
-    Alberto Calabrese - Email
-    Giacomo Filippin - Email
+    Alessandro Pala - alessandro.pala@studenti.unipd.it
+    Lorenzo Cino - lorenzo.cino@studenti.unipd.it
+    Greta Grelli - greta.damoregrelli@studenti.unipd.it
+    Alberto Calabrese - alberto.calabrese2@studenti.unipd.it
+    Giacomo Filippin - giacomo.filippin@studenti.unipd.it
 
-Abstract
+## Abstract
 
 This project focuses on classifying speeches as populist or non-populist using fine-tuned language models. We utilized a dataset of 500 labelled speeches, equally split between populist and non-populist, and evaluated four models: BERT-tiny, BERT-large, GPT-2, and RoBERTa-large. The RoBERTa-large model achieved the best performance with an accuracy of 88%.
 Table of Contents
@@ -29,7 +29,7 @@ Table of Contents
     Usage
     References
 
-Introduction
+## Introduction
 
 Populism is a significant issue in political speech. This project aims to fine-tune pre-trained language models to classify text as populist or non-populist. Populist speeches often mention "the people" as a unity against the "corrupt elite" and may employ fearmongering and anti-establishment rhetoric.
 Dataset
@@ -42,7 +42,7 @@ Preprocessing
     Tokenization: Each model's tokenizer converts the speeches into token IDs, adds special tokens, and pads/truncates sequences to a fixed length.
     Data Loading: Custom data loader classes create iterators for batching and shuffling the datasets.
 
-Model Fine-Tuning
+## Model Fine-Tuning
 
 Four pre-trained models were fine-tuned:
 
@@ -73,12 +73,12 @@ RoBERTa-large
     Accuracy: ~0.88
     Observations: Best performance among all models, demonstrating its suitability for the task.
 
-Conclusion
+## Conclusion
 
 RoBERTa-large outperformed other models, achieving an accuracy of 88%. This suggests that large, encoder-only pre-trained models optimized for robust performance are highly suitable for binary classification tasks involving nuanced textual analysis.
 Usage
 
-To run the code and reproduce the results, follow these steps:
+## To run the code and reproduce the results, follow these steps:
 
     Clone the repository:
 
