@@ -1,0 +1,117 @@
+Binary Classification of Populist Speech
+Overview
+
+This repository contains the code and data for the paper "Binary Classification of Populist Speech". The study addresses the classification of speeches as populist or non-populist using fine-tuned pre-trained language models. The models evaluated include BERT-tiny, BERT-large, GPT-2, and RoBERTa-large.
+Authors
+
+    Alessandro Pala - Email
+    Lorenzo Cino - Email
+    Greta Grelli - Email
+    Alberto Calabrese - Email
+    Giacomo Filippin - Email
+
+Abstract
+
+This project focuses on classifying speeches as populist or non-populist using fine-tuned language models. We utilized a dataset of 500 labelled speeches, equally split between populist and non-populist, and evaluated four models: BERT-tiny, BERT-large, GPT-2, and RoBERTa-large. The RoBERTa-large model achieved the best performance with an accuracy of 88%.
+Table of Contents
+
+    Introduction
+    Dataset
+    Methodology
+        Preprocessing
+        Model Fine-Tuning
+    Experiments and Results
+        BERT-tiny
+        BERT-large
+        GPT-2
+        RoBERTa-large
+    Conclusion
+    Usage
+    References
+
+Introduction
+
+Populism is a significant issue in political speech. This project aims to fine-tune pre-trained language models to classify text as populist or non-populist. Populist speeches often mention "the people" as a unity against the "corrupt elite" and may employ fearmongering and anti-establishment rhetoric.
+Dataset
+
+The dataset consists of 500 speeches, with 250 populist and 250 non-populist speeches. Each speech is manually labelled. The data is in .xlsx format, with speeches in one column and labels (0 for non-populist, 1 for populist) in the adjacent column.
+Methodology
+Preprocessing
+
+    Data Splitting: The dataset is split into training and testing subsets (80-20 split).
+    Tokenization: Each model's tokenizer converts the speeches into token IDs, adds special tokens, and pads/truncates sequences to a fixed length.
+    Data Loading: Custom data loader classes create iterators for batching and shuffling the datasets.
+
+Model Fine-Tuning
+
+Four pre-trained models were fine-tuned:
+
+    BERT-tiny: Small encoder-only model by Google.
+    BERT-large: Large encoder-only model by Google.
+    GPT-2: Large decoder-only model by OpenAI.
+    RoBERTa-large: Large encoder-only model by Facebook AI.
+
+Training involved using the Adam optimizer with exponential weight decay and a dynamic learning rate scheduler. Gradient clipping was applied to prevent exploding gradients.
+Experiments and Results
+BERT-tiny
+
+    Accuracy: ~0.59
+    Observations: Gradual decline in loss, but accuracy plateaued slightly above random.
+
+BERT-large
+
+    Accuracy: ~0.71
+    Observations: Better than BERT-tiny, but still plateaued at an unsatisfactory rate.
+
+GPT-2
+
+    Accuracy: ~0.61
+    Observations: Limited improvement in loss, noisy accuracy trends.
+
+RoBERTa-large
+
+    Accuracy: ~0.88
+    Observations: Best performance among all models, demonstrating its suitability for the task.
+
+Conclusion
+
+RoBERTa-large outperformed other models, achieving an accuracy of 88%. This suggests that large, encoder-only pre-trained models optimized for robust performance are highly suitable for binary classification tasks involving nuanced textual analysis.
+Usage
+
+To run the code and reproduce the results, follow these steps:
+
+    Clone the repository:
+
+    bash
+
+git clone https://github.com/yourusername/populist-speech-classification.git
+cd populist-speech-classification
+
+Install the required dependencies:
+
+bash
+
+pip install -r requirements.txt
+
+Prepare the dataset in the specified format and place it in the data directory.
+
+Run the training script:
+
+bash
+
+python train.py
+
+Evaluate the models:
+
+bash
+
+    python evaluate.py
+
+References
+
+    Devlin, J., et al. (2018). BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.
+    Radford, A., et al. (2019). Language Models are Unsupervised Multitask Learners.
+    Liu, Y., et al. (2019). RoBERTa: A Robustly Optimized BERT Pretraining Approach.
+    Hoffmann, J., et al. (2022). Training Compute-Optimal Large Language Models.
+
+For more details, please refer to the full paper included in this repository.
