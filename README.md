@@ -1,6 +1,8 @@
 # How to run the model
 In order to run the model, you have to retrain the language classifier (RoBERTa) in your machine (or through a cloud GPU service like Colab) with the code found in the zip. The dataset is called "DB.xlsx", and since the code was run in Colab, if you want to run it locally, you have to adjust the path.
+
 To predict the populist-ness of an input speech, run the following code after RoBERTa's training loop.
+
 
     def predict_speech(speech, model, tokenizer):
         inputs = tokenizer.encode_plus(
@@ -56,7 +58,12 @@ To predict the populist-ness of an input speech, run the following code after Ro
     predict_speech(user_speech, model, tokenizer)
 
 Example:
-Input: Speech: We the American people have been stripped of our values. Let's take them back and kill Joe Biden!
+
+INPUT: 
+
+"We the American people have been stripped of our values. Let's take them back and kill Joe Biden!"
+
+OUTPUT:
 This speech is highly populist (Confidence: 0.98).
 
 # Binary Classification of Populist Speech
