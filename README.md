@@ -1,5 +1,5 @@
 # How to run the model
-In order to run the model, you have to retrain the language classifier (RoBERTa) in your machine (or through a cloud GPU service like Colab) with the code found in the zip. The dataset is called "DB.xlsx".
+In order to run the model, you have to retrain the language classifier (RoBERTa) in your machine (or through a cloud GPU service like Colab) with the code found in the zip. The dataset is called "DB.xlsx", and since the code was run in Colab, if you want to run it locally, you have to adjust the path.
 To predict the populist-ness of an input speech, run the following code after RoBERTa's training loop.
 
     def predict_speech(speech, model, tokenizer):
