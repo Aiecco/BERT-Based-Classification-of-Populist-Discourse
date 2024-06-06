@@ -1,3 +1,64 @@
+# How to run the model
+In order to run the model, you have to retrain the language classifier (RoBERTa) in your machine (or through a cloud GPU service like Colab) with the code found in the zip. The dataset is called "DB.xlsx".
+To predict the populist-ness of an input speech, run the following code after RoBERTa's training loop.
+
+    def predict_speech(speech, model, tokenizer):
+        inputs = tokenizer.encode_plus(
+            speech,
+            add_special_tokens=True,
+            max_length=512,
+            return_token_type_ids=False,
+            padding='max_length',
+            truncation=True,
+            return_attention_mask=True,
+            return_tensors='pt',
+        )
+    
+        input_ids = inputs['input_ids'].to(device)
+        attention_mask = inputs['attention_mask'].to(device)
+    
+    
+        model.eval()
+        with torch.no_grad():
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+            logits = outputs.logits.squeeze(0)
+            probabilities = torch.nn.functional.softmax(logits, dim=-1)
+            predicted_label = probabilities.argmax(dim=-1).item()
+            confidence = probabilities.max().item()
+    
+    
+        label_map = {0: "Not Populist", 1: "Populist"}
+    
+        print(f"Speech: {speech}")
+    
+        if confidence >= 0.88:
+            print(f"This speech is highly populist (Confidence: {confidence:.2f}).")
+        if confidence >= 0.70 and confidence <= 0.87:
+            print(f"This speech is very likely populist (Confidence: {confidence:.2f}).")
+        if confidence >= 0.55 and confidence <= 0.69:
+            print(f"This speech is probably populist (Confidence: {confidence:.2f}).")
+        if confidence >= 0.25 and confidence <= 0.54:
+            print(f"This speech is possibly populist (Confidence: {confidence:.2f}).")
+    
+        if confidence <= -0.88:
+            print(f"This speech is not populist at all (Confidence: {confidence:.2f}).")
+        if confidence <= -0.70 and confidence >= -0.87:
+            print(f"This speech is very likely not populist (Confidence: {confidence:.2f}).")
+        if confidence <= -0.55 and confidence >= -0.69:
+            print(f"This speech is probably not populist (Confidence: {confidence:.2f}).")
+        if confidence <= -0.25 and confidence >= -0.54:
+            print(f"This speech is possibly not populist (Confidence: {confidence:.2f}).")
+    
+        if confidence >= -0.24 and confidence <= 0.24:
+            print(f"This speech is hard to label, but could contain some populist elements (Confidence: {confidence:.2f}).")
+
+    user_speech = input("Enter a speech to classify: ")
+    predict_speech(user_speech, model, tokenizer)
+
+Example:
+Input: Speech: We the American people have been stripped of our values. Let's take them back and kill Joe Biden!
+This speech is highly populist (Confidence: 0.98).
+
 # Binary Classification of Populist Speech
 ## Overview
 
