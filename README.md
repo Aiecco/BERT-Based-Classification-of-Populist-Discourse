@@ -64,13 +64,14 @@ INPUT:
 "We the American people have been stripped of our values. Let's take them back and kill Joe Biden!"
 
 OUTPUT:
+
 This speech is highly populist (Confidence: 0.98).
 
 # Binary Classification of Populist Speech
 ## Overview
 
 This repository contains the code and data for the paper "Binary Classification of Populist Speech". The study addresses the classification of speeches as populist or non-populist using fine-tuned pre-trained language models. The models evaluated include BERT-tiny, BERT-large, GPT-2, and RoBERTa-large.
-Authors
+### Authors
 
     Alessandro Pala - alessandro.pala@studenti.unipd.it
     Lorenzo Cino - lorenzo.cino@studenti.unipd.it
@@ -81,7 +82,7 @@ Authors
 ## Abstract
 
 This project focuses on classifying speeches as populist or non-populist using fine-tuned language models. We utilized a dataset of 500 labelled speeches, equally split between populist and non-populist, and evaluated four models: BERT-tiny, BERT-large, GPT-2, and RoBERTa-large. The RoBERTa-large model achieved the best performance with an accuracy of 88%.
-Table of Contents
+### Table of Contents
 
     Introduction
     Dataset
@@ -103,8 +104,7 @@ Populism is a significant issue in political speech. This project aims to fine-t
 Dataset
 
 The dataset consists of 500 speeches, with 250 populist and 250 non-populist speeches. Each speech is manually labelled. The data is in .xlsx format, with speeches in one column and labels (0 for non-populist, 1 for populist) in the adjacent column.
-Methodology
-Preprocessing
+## Methodology - Preprocessing
 
     Data Splitting: The dataset is split into training and testing subsets (80-20 split).
     Tokenization: Each model's tokenizer converts the speeches into token IDs, adds special tokens, and pads/truncates sequences to a fixed length.
@@ -120,7 +120,9 @@ Four pre-trained models were fine-tuned:
     RoBERTa-large: Large encoder-only model by Facebook AI.
 
 Training involved using the Adam optimizer with exponential weight decay and a dynamic learning rate scheduler. Gradient clipping was applied to prevent exploding gradients.
-Experiments and Results
+
+## Experiments and Results
+
 BERT-tiny
 
     Accuracy: ~0.59
@@ -144,36 +146,6 @@ RoBERTa-large
 ## Conclusion
 
 RoBERTa-large outperformed other models, achieving an accuracy of 88%. This suggests that large, encoder-only pre-trained models optimized for robust performance are highly suitable for binary classification tasks involving nuanced textual analysis.
-Usage
-
-## To run the code and reproduce the results, follow these steps:
-
-    Clone the repository:
-
-    bash
-
-git clone https://github.com/yourusername/populist-speech-classification.git
-cd populist-speech-classification
-
-Install the required dependencies:
-
-bash
-
-pip install -r requirements.txt
-
-Prepare the dataset in the specified format and place it in the data directory.
-
-Run the training script:
-
-bash
-
-python train.py
-
-Evaluate the models:
-
-bash
-
-    python evaluate.py
 
 References
 
